@@ -1,18 +1,11 @@
 /* Larger font size. */
-	/* I like to use my own font at a fairly large size. I commented it out here
-	 * as I suspect I'm rather idiosyncratic in my preference here. 
-				* { font-family: "DejaVu Sans"; font-size: 20px; }
-	* */
+	* { font-family: "DejaVu Sans"; font-size: 20px; }
 
 /* No close button on tabs. */
 	.tab-close-button { display: none; }
 
 /* Darker colour for inactive tabs */
 	#navigator-toolbox { background-color: #d3d3d3 !important; }
-	/* NOTE: this doesn't work well for dark themes. I don't know how to select
-	   for this. Something that works well is e.g:
-	   #navigator-toolbox { background-color: #6c6c6c !important; }
-	*/
 
 /* Match active tabs with toolbar colour */
 	#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[multiselected="true"],
@@ -26,7 +19,7 @@
 	}
 
 /* Remove margin around tabs */
-	:root { --tab-border-radius: 0 !important; --proton-tab-block-margin: 0 !important; }
+	:root { --tab-border-radius: 0 !important; --tab-block-margin: 0 !important; }
 
 	/* Add border between tabs. */
 	.tab-background { border-right: 1px solid rgba(0,0,0,.3) !important; margin-left: -4px !important; }
@@ -48,7 +41,7 @@
 	.search-one-offs { display: none !important; }
 
 /* Don't show icons for bookmark toolbar items; they're kind of pointless as I
- * just have bookmarklets in there with a generic icon. Just the text is enough. */
+   just have bookmarklets in there with a generic icon. Just the text is enough. */
 	.bookmark-item .toolbarbutton-icon              { display: none; }
 	toolbarbutton.bookmark-item:not(.subviewbutton) { min-width: 1.6em; }
 
@@ -59,3 +52,31 @@
 	#pageActionButton,                    /* Page actions dropdown in URL bar */
 	#pageActionSeparator                  /* Now pointless whitespace */
 	{ display: none; }
+
+/* Disable all sorts of things from right-click menu that I never use. */
+	#context-navigation, /* back/forward etc. */
+	#context-savepage,
+	#context-pocket,
+	#context-sendpagetodevice,
+	#context-selectall,
+	#context-viewsource,
+	#context-inspect-a11y,
+	#context-sendlinktodevice,
+	#context-openlinkinusercontext-menu,
+	#context-bookmarklink,
+	#context-savelink,
+	#context-savelinktopocket,
+	#context-sendlinktodevice,
+	#context-searchselect,
+	#context-sendimage,
+	#context-print-selection
+	{ display: none !important; }
+
+/* Tab */
+	#context_bookmarkTab,
+	#context_moveTabOptions,
+	#context_sendTabToDevice,
+	#context_reopenInContainer,
+	#context_selectAllTabs,
+	#context_closeTabOptions /* "Close multiple tabs" */
+	{ display: none !important; }

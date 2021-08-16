@@ -10,9 +10,10 @@ A lot of the CSS I found is a complete restyling of Firefox, often with
 thousands of lines of CSS. Nice, but that's a bit too much for me. This is just
 61 lines.
 
-The CSS file is fairly well annotated, so you can add/remove/modify stuff
-according to preferences. It should hopefully be fairly future-compatible too on
-account being fairly small.
+There's a bunch of other stuff in there as well, it's just a copy of what I like
+to put in there. The CSS file is fairly well annotated, so you can
+add/remove/modify stuff according to preferences. It should hopefully be fairly
+future-compatible too on account being fairly small.
 
 Screenshot
 ----------
@@ -31,10 +32,11 @@ Usage
 
 Notes
 -----
-- Only tested on my Linux system with Firefox 89.
+- Only tested on my Linux system.
 
-- You need to modify the toolbar colour if you use a dark theme. There's a
-  comment for that (I don't know how to select for this).
+- Needs Firefox 91.
+
+- You need to modify the toolbar colour if you use a dark theme.
 
 - If you set `browser.compactmode.show`  to `true` in about:config you can
   select "density compact". Dunno how long they will keep this around, but it
