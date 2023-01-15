@@ -1,11 +1,8 @@
-/* Larger font size. */
-	* { font-family: "DejaVu Sans"; font-size: 20px; }
-
 /* No close button on tabs. */
 	.tab-close-button { display: none; }
 
-/* Darker colour for inactive tabs */
-	#navigator-toolbox { background-color: #d3d3d3 !important; }
+/* Force background colour on toolbar */
+	#navigator-toolbox { background-color: #c6c6c6 !important; }
 
 /* Match active tabs with toolbar colour */
 	#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[multiselected="true"],
@@ -16,6 +13,11 @@
 /* Remove weird gap between pinned and normal tabs. */
 	#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab[first-visible-unpinned-tab] {
 		margin-inline-start: 0 !important;
+	}
+
+/* Remove gap at start of tab bar */
+	#tabbrowser-tabs {
+		padding-inline-start: 0 !important; margin-inline-start: 0 !important; border-inline-start: none !important;
 	}
 
 /* Remove margin around tabs */
@@ -31,6 +33,9 @@
 	.tabbrowser-tab[last-visible-tab="true"] { padding-inline-end: 0 !important; }
 	#tabs-newtab-button                      { padding-left: 0 !important; }
 
+	/* Less harsh border below the tabs. */
+	#nav-bar:not([tabs-hidden="true"])       { box-shadow: 0 -1px 0 rgba(0, 0, 0, .1); }
+
 /* Set URL bar background colour and add a border. */
 	#urlbar-input-container { background-color: #fff !important; border: 1px solid hsla(240,5%,5%,.25) !important; }
 
@@ -40,10 +45,16 @@
 /* Don't show these pointless search buttons in URL bar dropdown */
 	.search-one-offs { display: none !important; }
 
+/* Dropdown with active tabs; can only be on the left side and is annoying */
+#alltabs-button { display: none; }
+
 /* Don't show icons for bookmark toolbar items; they're kind of pointless as I
    just have bookmarklets in there with a generic icon. Just the text is enough. */
 	.bookmark-item .toolbarbutton-icon              { display: none; }
 	toolbarbutton.bookmark-item:not(.subviewbutton) { min-width: 1.6em; }
+
+/* Never display "Show more bookmarks" in toolbar, as there aren't any more */
+	#PlacesChevron { display: none; }
 
 /* Toolbar stuff I never use. */
 	#tracking-protection-icon-container,  /* "Tracking protection */
@@ -62,7 +73,6 @@
 	#context-viewsource,
 	#context-inspect-a11y,
 	#context-sendlinktodevice,
-	#context-openlinkinusercontext-menu,
 	#context-bookmarklink,
 	#context-savelink,
 	#context-savelinktopocket,
